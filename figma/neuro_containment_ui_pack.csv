@@ -1,6 +1,6 @@
 screen,section,key,text,severity,anim_hint
 BOOT / WAKE,Identity,PRISONER_ID,PRISONER ID 76561198380490588,info,steady
-BOOT / WAKE,Identity,SECTION,SECTION 6, ENTRYPOINT dx,info,steady
+BOOT / WAKE,Identity,SECTION,SECTION 6 // ENTRYPOINT dx,info,steady
 BOOT / WAKE,Identity,ALIAS,ALIAS "WTH",info,flicker_minor
 BOOT / WAKE,System,LINE_01,WAKE SEQUENCE ACCEPTED,info,type_on
 BOOT / WAKE,System,LINE_02,LANGUAGE PACK :: RU-EN MIXED,info,steady
