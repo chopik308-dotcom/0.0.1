@@ -1,48 +1,87 @@
-# System Pressure UI Copy Pack
+# NEOcortex / Exocortex Scaffold
 
-Репозиторий хранит:
+Репозиторий теперь содержит не только структуру, но и **рабочий phase-0/phase-1 minimal loop**:
 
-- **исходники контента** для Figma (`figma/`),
-- **экспортированные артефакты** прототипа (`artifacts/figma-make-export/`).
+- phase 0 канонизация 4 экранов (visual + semantics)
+- локальный UI shell Zero Room
+- локальный FastAPI mock для status/import/map/entourage
 
-## Рекомендуемая структура
+## Репозиторий
 
 ```text
 .
-├─ figma/
-│  ├─ README.md
-│  └─ neuro_containment_ui_pack.csv
-├─ artifacts/
-│  └─ figma-make-export/
-│     ├─ README.md
-│     ├─ html/
-│     ├─ assets/
-│     └─ previews/
-└─ README.md
+├─ apps/
+│  ├─ zero-room-web/
+│  └─ obsidian-bridge/
+├─ services/
+│  ├─ api/
+│  ├─ entourage-runtime/
+│  └─ ingestion-worker/
+├─ packages/
+│  ├─ semantic-core/
+│  ├─ map-engine/
+│  ├─ llm-abstraction/
+│  ├─ shared-types/
+│  ├─ design-tokens/
+│  ├─ thesaurus-slot/
+│  ├─ soma-slot/
+│  └─ fractal-core-slot/
+├─ data/
+│  ├─ seed-notes/
+│  └─ fixtures/
+├─ docs/
+│  ├─ phase-0-visual-canon.md
+│  ├─ architecture.md
+│  ├─ module-map.md
+│  ├─ roadmap.md
+│  ├─ prompts.md
+│  ├─ glossary.md
+│  ├─ session-loop.md
+│  ├─ metrics.md
+│  ├─ stabilization-gates.md
+│  └─ future-directions.md
+└─ artifacts/
 ```
 
-## Зачем так
+## Quick start (local)
 
-- `figma/` = источник истины (копирайтинг, severity, animation hints).
-- `artifacts/` = результат генерации/экспорта, который можно смотреть и тестировать отдельно.
-- Контекст не теряется: и source, и output живут в одном репозитории, но не перемешаны.
-
-## Если у тебя уже есть папка `Systempressureuicopypack-main`
-
-Перемести её содержимое в `artifacts/figma-make-export/` и удали старую корневую папку.
-
-Пример (локально в терминале):
+1) API:
 
 ```bash
-mkdir -p artifacts/figma-make-export
-cp -R Systempressureuicopypack-main/. artifacts/figma-make-export/
-rm -rf Systempressureuicopypack-main
+cd services/api
+python -m venv .venv
 ```
 
-После этого сделай коммит:
+Activate venv depending on your shell:
+
+- Linux/macOS (bash/zsh): `source .venv/bin/activate`
+- Windows PowerShell: `.\.venv\Scripts\Activate.ps1`
+- Windows cmd: `.venv\Scripts\activate.bat`
+
+Then run:
 
 ```bash
-git add -A
-git commit -m "Restructure repository: keep figma sources and move exports to artifacts"
-git push
+pip install -r requirements.txt
+uvicorn main:app --host 127.0.0.1 --port 8000
 ```
+
+2) UI (new terminal):
+
+```bash
+cd apps/zero-room-web
+python3 -m http.server 4173
+```
+
+Open `http://127.0.0.1:4173`.
+
+## Что уже работает
+
+- 4 canonicalized screens with subject-to-self copy.
+- Import Notes -> API ingest from `data/seed-notes`.
+- Deterministic + probabilistic mock pass.
+- Map snapshot + timeline events + revision counting.
+- Entourage mock reply channel with mini state output.
+
+## Legacy
+
+`artifacts/` сохранён как история предыдущих Figma/экспортных артефактов.
