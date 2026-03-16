@@ -57,3 +57,6 @@ python3 scripts/dev.py --bootstrap
 ```
 
 If API venv already exists, plain `python3 scripts/dev.py` is enough.
+
+
+Shortcut from repo root (vite-like): `npm run dev:bootstrap`.

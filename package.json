@@ -1,0 +1,12 @@
+{
+  "name": "neocortex-scaffold",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:bootstrap": "node scripts/dev.mjs --bootstrap",
+    "dev:api": "node scripts/dev.mjs --api-only",
+    "dev:ui": "node scripts/dev.mjs --ui-only",
+    "test:api": "cd services/api && python3 -m unittest tests/test_semantic_pipeline.py"
+  }
+}
