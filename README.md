@@ -46,10 +46,6 @@
 
 ## Quick start (local)
 
-## Самый простой запуск
-
-## Запуск как в Vite-проектах (самый короткий путь)
-
 ```bash
 npm run dev:bootstrap
 ```
