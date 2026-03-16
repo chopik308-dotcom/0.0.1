@@ -82,6 +82,22 @@ Open `http://127.0.0.1:4173`.
 - Map snapshot + timeline events + revision counting.
 - Entourage mock reply channel with mini state output.
 
+
+## Как проверять PR без merge
+
+Коротко: **код в вашей основной ветке/вебе не меняется, пока PR не смёржен**.
+
+Рекомендованный flow проверки:
+
+1. Открыть PR и смотреть `Files changed` (даже при конфликте merge).
+2. Локально переключиться на ветку PR и запустить проект:
+   - API: `cd services/api && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && uvicorn main:app --host 127.0.0.1 --port 8000`
+   - UI: `cd apps/zero-room-web && python3 -m http.server 4173`
+3. Проверить тесты на ветке PR: `cd services/api && python3 -m unittest tests/test_semantic_pipeline.py`.
+4. Только после проверки решать конфликты и merge.
+
+Если в GitHub показаны конфликты (`README.md`, `services/api/README.md`), это значит только то, что Git не может автоматически склеить тексты. Сам PR-код при этом уже можно полноценно смотреть и запускать в ветке PR.
+
 ## Legacy
 
 `artifacts/` сохранён как история предыдущих Figma/экспортных артефактов.

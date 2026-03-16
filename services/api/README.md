@@ -34,3 +34,9 @@ uvicorn main:app --host 127.0.0.1 --port 8000
 cd services/api
 python3 -m unittest tests/test_semantic_pipeline.py
 ```
+
+
+## PR review note
+
+`Merge conflict` in GitHub means auto-merge failed, not that you cannot run this branch.
+You can still checkout the PR branch locally and run/test API before resolving conflicts.
