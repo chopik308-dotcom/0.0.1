@@ -51,8 +51,10 @@
 После установки зависимостей API (один раз):
 
 ```bash
-python3 scripts/dev.py
+python3 scripts/dev.py --bootstrap
 ```
+
+(первый запуск с установкой зависимостей; затем можно просто `python3 scripts/dev.py`)
 
 Запустятся сразу:
 - API: `http://127.0.0.1:8000` (`/docs`)
@@ -60,6 +62,7 @@ python3 scripts/dev.py
 
 Опции:
 - `python3 scripts/dev.py --api-only`
+- `python3 scripts/dev.py --bootstrap --api-only` (если venv ещё нет)
 - `python3 scripts/dev.py --ui-only`
 
 1) API (Linux/macOS, bash):

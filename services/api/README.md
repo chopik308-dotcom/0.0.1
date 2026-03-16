@@ -53,5 +53,7 @@ You can still checkout the PR branch locally and run/test API before resolving c
 From repository root you can run both API + UI with:
 
 ```bash
-python3 scripts/dev.py
+python3 scripts/dev.py --bootstrap
 ```
+
+If API venv already exists, plain `python3 scripts/dev.py` is enough.
