@@ -46,3 +46,12 @@ python3 -m unittest tests/test_semantic_pipeline.py
 
 `Merge conflict` in GitHub means auto-merge failed, not that you cannot run this branch.
 You can still checkout the PR branch locally and run/test API before resolving conflicts.
+
+
+## One-command dev
+
+From repository root you can run both API + UI with:
+
+```bash
+python3 scripts/dev.py
+```

@@ -31,6 +31,7 @@
 │  └─ fixtures/
 ├─ docs/
 │  ├─ phase-0-visual-canon.md
+│  ├─ ui-phase-0-notes.md
 │  ├─ architecture.md
 │  ├─ module-map.md
 │  ├─ roadmap.md
@@ -44,6 +45,22 @@
 ```
 
 ## Quick start (local)
+
+## Самый простой запуск
+
+После установки зависимостей API (один раз):
+
+```bash
+python3 scripts/dev.py
+```
+
+Запустятся сразу:
+- API: `http://127.0.0.1:8000` (`/docs`)
+- UI: `http://127.0.0.1:4173`
+
+Опции:
+- `python3 scripts/dev.py --api-only`
+- `python3 scripts/dev.py --ui-only`
 
 1) API (Linux/macOS, bash):
 
